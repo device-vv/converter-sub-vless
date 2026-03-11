@@ -17,7 +17,7 @@ A lightweight Python tool to extract **VLESS keys** from a [Remnawave](https://r
 |---|---|
 | 🖥 **CLI mode** (default) | Interactive terminal, scriptable with arguments |
 | 🌐 **Web GUI mode** | Runs a local server, opens in your browser |
-| 🔒 **SSL fix** | Toggle to bypass certificate errors with one flag |
+| 🔒 **SSL bypass** | Ignore certificate errors with a single flag or checkbox |
 | 📦 **Multiple formats** | JSON, Base64, Plain Text subscriptions |
 | 🤖 **Client spoofing** | Clash, V2RayNG, Hiddify, Shadowrocket, V2RayN |
 | 📋 **Export** | Copy to clipboard or download `.txt` |
@@ -91,7 +91,7 @@ For educational purposes only. The author is not responsible for any misuse.
 |---|---|
 | 🖥 **CLI режим** (по умолчанию) | Интерактивный терминал, поддержка аргументов |
 | 🌐 **Веб GUI режим** | Локальный сервер, открывается в браузере |
-| 🔒 **Починка SSL** | Одна галочка / флаг обходит ошибки сертификатов |
+| 🔒 **Обход проверки SSL** | Игнорирование ошибок сертификата одним флагом или галочкой в UI |
 | 📦 **Много форматов** | JSON, Base64, обычный текст |
 | 🤖 **Имитация клиентов** | Clash, V2RayNG, Hiddify, Shadowrocket, V2RayN |
 | 📋 **Экспорт** | Копировать в буфер или скачать `.txt` |
