@@ -1,114 +1,152 @@
 <p align="center">
-  <a href="#-remnawave-subscription-to-vless-keys-converter">English</a> •
-  <a href="#-конвертер-подписки-remnawave-в-ключи-vless">Русский</a>
+  <a href="#english">🇬🇧 English</a> &nbsp;•&nbsp;
+  <a href="#russian">🇷🇺 Русский</a>
 </p>
-
-# Remnawave Subscription to VLESS Keys Converter
-
-This script converts a Remnawave subscription URL into VLESS keys. It supports various subscription formats and can simulate different VPN clients to fetch the subscription data.
-
-## Features
-
-- Converts Remnawave subscription URLs to VLESS keys.
-- Supports multiple subscription formats:
-    - JSON
-    - Base64
-    - Plain text
-- Simulates different VPN clients using their user agents:
-    - Clash
-    - V2RayNG
-    - Hiddify
-    - Shadowrocket
-    - V2RayN
-- Extracts VLESS keys from Xray configurations.
-- Builds `vless://` URLs from parameters.
-- Displays the extracted VLESS keys in the console.
-- Saves the extracted VLESS keys to a file.
-
-## How to Use
-
-1. **Run the script:**
-   ```bash
-   python3 converter.py
-   ```
-2. **Enter the Remnawave subscription URL when prompted:**
-   ```
-   🔗 Enter the Remnawave subscription URL: [your_subscription_url]
-   ```
-3. **(Optional) Specify a file to save the keys:**
-   ```
-   💾 Save keys to a file? (Enter to skip, or specify a filename): [your_filename]
-   ```
-4. **The script will then fetch the subscription, convert it, and display the VLESS keys.**
-
-## Command-line Arguments
-
-You can also provide the subscription URL as a command-line argument:
-
-```bash
-python3 converter.py [your_subscription_url]
-```
-
-## Requirements
-
-- Python 3
-
-## Disclaimer
-
-This script is for educational purposes only. The author is not responsible for any misuse of this script.
 
 ---
 
-# Конвертер подписки Remnawave в ключи VLESS
+<a name="english"></a>
 
-Этот скрипт преобразует URL-адрес подписки Remnawave в ключи VLESS. Он поддерживает различные форматы подписки и может имитировать различные VPN-клиенты для получения данных подписки.
+# Remnawave → VLESS Keys Converter
+
+A lightweight Python tool to extract **VLESS keys** from a [Remnawave](https://remnawave.io) subscription URL. Works in **CLI** (default) and **browser-based GUI** (with `--gui` flag). No third-party packages required.
+
+## Features
+
+| Feature | Details |
+|---|---|
+| 🖥 **CLI mode** (default) | Interactive terminal, scriptable with arguments |
+| 🌐 **Web GUI mode** | Runs a local server, opens in your browser |
+| 🔒 **SSL fix** | Toggle to bypass certificate errors with one flag |
+| 📦 **Multiple formats** | JSON, Base64, Plain Text subscriptions |
+| 🤖 **Client spoofing** | Clash, V2RayNG, Hiddify, Shadowrocket, V2RayN |
+| 📋 **Export** | Copy to clipboard or download `.txt` |
+| ⚡ **Zero dependencies** | Pure Python 3 stdlib only |
+
+## Quick Start
+
+### CLI (default)
+
+```bash
+# Interactive — you will be prompted for the URL
+python3 converter.py
+
+# Pass URL directly
+python3 converter.py https://your-remnawave.example/sub/TOKEN
+
+# SSL certificate error? Add --insecure
+python3 converter.py --insecure https://your-remnawave.example/sub/TOKEN
+```
+
+### Web GUI
+
+```bash
+# Opens browser at http://127.0.0.1:7788 automatically
+python3 converter.py --gui
+```
+
+> If the browser doesn't open automatically, copy the URL printed in terminal.  
+> Press **Ctrl+C** to stop the server — the port is released immediately.
+
+## CLI Reference
+
+| Argument | Description |
+|---|---|
+| (none) | Launch interactive CLI |
+| `<url>` | Subscription URL (skips the prompt) |
+| `--insecure` | Skip SSL certificate verification |
+| `--gui` | Launch browser-based GUI instead of CLI |
+| `--kill` | Stop the currently running background GUI server |
+
+## Requirements
+
+- **Python 3.7+** — nothing else needed
+- *(Optional)* `pip install certifi` — more reliable SSL certificate handling
+
+## SSL Error Fix
+
+Getting `[SSL: CERTIFICATE_VERIFY_FAILED]`?
+
+| Solution | How |
+|---|---|
+| **Quick** | Add `--insecure` flag or check the box in GUI |
+| **Proper** (macOS) | Run `Install Certificates.command` from Applications → Python folder |
+| **Proper** (any) | `pip install certifi` |
+
+## Disclaimer
+
+For educational purposes only. The author is not responsible for any misuse.
+
+---
+
+<a name="russian"></a>
+
+# Конвертер подписки Remnawave → ключи VLESS
+
+Лёгкий Python-инструмент для извлечения **VLESS-ключей** из ссылки подписки [Remnawave](https://remnawave.io). Работает в режиме **CLI** (по умолчанию) и **браузерного GUI** (флаг `--gui`). Сторонние пакеты не нужны.
 
 ## Возможности
 
-- Преобразует URL-адреса подписок Remnawave в ключи VLESS.
-- Поддерживает несколько форматов подписки:
-    - JSON
-    - Base64
-    - Обычный текст
-- Имитирует различные VPN-клиенты, используя их пользовательские агенты:
-    - Clash
-    - V2RayNG
-    - Hiddify
-    - Shadowrocket
-    - V2RayN
-- Извлекает ключи VLESS из конфигураций Xray.
-- Собирает URL-адреса `vless://` из параметров.
-- Отображает извлеченные ключи VLESS в консоли.
-- Сохраняет извлеченные ключи VLESS в файл.
+| Функция | Описание |
+|---|---|
+| 🖥 **CLI режим** (по умолчанию) | Интерактивный терминал, поддержка аргументов |
+| 🌐 **Веб GUI режим** | Локальный сервер, открывается в браузере |
+| 🔒 **Починка SSL** | Одна галочка / флаг обходит ошибки сертификатов |
+| 📦 **Много форматов** | JSON, Base64, обычный текст |
+| 🤖 **Имитация клиентов** | Clash, V2RayNG, Hiddify, Shadowrocket, V2RayN |
+| 📋 **Экспорт** | Копировать в буфер или скачать `.txt` |
+| ⚡ **Нет зависимостей** | Только стандартная библиотека Python 3 |
 
-## Как использовать
+## Быстрый старт
 
-1. **Запустите скрипт:**
-   ```bash
-   python3 converter.py
-   ```
-2. **Введите URL-адрес подписки Remnawave, когда будет предложено:**
-   ```
-   🔗 Введите URL подписки Remnawave: [ваш_url_подписки]
-   ```
-3. **(Необязательно) Укажите файл для сохранения ключей:**
-   ```
-   💾 Сохранить ключи в файл? (Enter - пропустить, или укажите имя файла): [ваше_имя_файла]
-   ```
-4. **Затем скрипт получит подписку, преобразует ее и отобразит ключи VLESS.**
-
-## Аргументы командной строки
-
-Вы также можете указать URL-адрес подписки в качестве аргумента командной строки:
+### CLI (по умолчанию)
 
 ```bash
-python3 converter.py [ваш_url_подписки]
+# Интерактивный — спросит URL сам
+python3 converter.py
+
+# URL в аргументе — сразу начинает работу
+python3 converter.py https://your-remnawave.example/sub/TOKEN
+
+# Ошибка SSL? Добавьте --insecure
+python3 converter.py --insecure https://your-remnawave.example/sub/TOKEN
 ```
+
+### Веб GUI
+
+```bash
+# Автоматически открывает браузер на http://127.0.0.1:7788
+python3 converter.py --gui
+```
+
+> Если браузер не открылся сам — скопируйте ссылку из терминала.  
+> **Ctrl+C** — остановить сервер. Порт освобождается немедленно.
+
+## Аргументы CLI
+
+| Аргумент | Описание |
+|---|---|
+| (нет) | Интерактивный CLI |
+| `<url>` | URL подписки (без запроса) |
+| `--insecure` | Игнорировать проверку SSL |
+| `--gui` | Запустить браузерный GUI |
+| `--kill` | Выключить локальный фоновый сервер GUI |
 
 ## Требования
 
-- Python 3
+- **Python 3.7+** — больше ничего не нужно
+- *(Опционально)* `pip install certifi` — надёжная обработка SSL
+
+## Решение ошибки SSL
+
+Ошибка `[SSL: CERTIFICATE_VERIFY_FAILED]`?
+
+| Способ | Как |
+|---|---|
+| **Быстро** | Флаг `--insecure` или галочка в GUI |
+| **Правильно** (macOS) | Запустить `Install Certificates.command` из папки Python в Программах |
+| **Правильно** (любая ОС) | `pip install certifi` |
 
 ## Отказ от ответственности
 
-Этот скрипт предназначен только для образовательных целей. Автор не несет ответственности за любое неправильное использование этого скрипта.
+Только для образовательных целей. Автор не несёт ответственности за неправомерное использование.
